@@ -21,6 +21,7 @@ class CreateClassesTable extends Migration
             $table->string('type');
             $table->foreign('schoolid')
             ->references('schoolid')->on('schools')->onDelete('cascade');
+            $table->timestamps();
             
         });
     }

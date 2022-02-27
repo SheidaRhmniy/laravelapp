@@ -24,8 +24,8 @@
         <div class="methods">
             <h1>School Managment</h1>
             <p><a href="/school" >create new school -></a></p>
-            <p><a href="" >create new student -></a></p>
-            <p><a href="" >create new class -></a></p>
+            <p><a href="/student" >create new student -></a></p>
+            <p><a href="/class" >create new class -></a></p>
         </div>
     </body>
 </html>
