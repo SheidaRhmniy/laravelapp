@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SchoolController;
+use App\Models\School;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +26,13 @@ Route::get('/student', function () {
 });
 Route::get('/class', function () {
     return View::make('class');
+});
+
+Route::post('/school',function(){
+    $school = new School();
+    $school->schName = request('schoolname');
+    $school->address = request('address');
+    $school->save();
+
+    return redirect('/school');
 });

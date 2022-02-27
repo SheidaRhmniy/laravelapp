@@ -22,6 +22,7 @@ class CreateClassStudentTable extends Migration
             $table->foreign('classid')
             ->references('classid')->on('classes')->onDelete('cascade');
             $table->integer('grade');
+            $table->timestamps();
             
         });
     }

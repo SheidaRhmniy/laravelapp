@@ -17,6 +17,7 @@ class CreateSchoolsTable extends Migration
             $table->bigIncrements('schoolid');
             $table->string('schName');
             $table->string('address');
+            $table->timestamps();
                  
         });
     }
