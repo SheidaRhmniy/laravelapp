@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClassStudentTable extends Migration
+class CreateClassStudentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateClassStudentTable extends Migration
     public function up()
     {
         Schema::create('class_students', function (Blueprint $table) {
-            /*$table->bigIncrements('id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('studentid');
             $table->unsignedBiginteger('classid');
             $table->foreign('studentid')
@@ -23,7 +23,6 @@ class CreateClassStudentTable extends Migration
             ->references('id')->on('classes')->onDelete('cascade');
             $table->integer('grade');
             $table->timestamps();
-            */
         });
     }
 
