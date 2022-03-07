@@ -15,4 +15,14 @@ class Classes extends Model
         'capacity',
         'type'
     ];
+
+    /**
+     * Get the schools that owns the Classes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function schools() 
+    {
+        return $this->belongsTo(schools::class, 'schoolid', 'id');
+    }
 }
