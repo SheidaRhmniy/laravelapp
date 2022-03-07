@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ClassController;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\Classes;
@@ -21,49 +23,15 @@ use App\Models\Classes;
 Route::get('/', function () {
     return View::make('welcome');
 });
-Route::get('/school', function () {
-    return View::make('school');
-});
-Route::get('/student', function () {
-    return View::make('student');
-});
-Route::get('/class', function () {
-    return View::make('class');
-});
 
-//Route::get('/showschool',[SchoolController::class,'showSchools']);
+Route::get('/school',[SchoolController::class,'index']);
+Route::post('/school',[SchoolController::class,'storeSchool']);
 
-Route::post('/school',function(){
-    $school = new School();
-    $school->schName = request('schoolname');
-    $school->address = request('address');
-    $school->save();
+Route::post('/student',[StudentController::class,'storeStudent']);
+Route::get('/student',[StudentController::class,'index']);
 
-    return redirect('/school');
-});
-
-Route::post('/student',function(){
-    $student = new Student();
-    $student->firstName = request('firstName');
-    $student->lastName = request('lastName');
-    $student->save();
-
-    return redirect('/student');
-});
+Route::post('/class',[ClassController::class,'storeClass']);
+Route::get('/class',[ClassController::class,'index']);
 
 
-Route::post('/class',function(){
-    $class = new Classes();
-    $class->schoolid = request('schoolid');
-    $class->className = request('classname');
-    $class->capacity = request('capacity');
-    $class->type = request('type');
-    $class->save();
 
-    return redirect('/class');
-});
-
- Route::get('/class',function(){
-    $data = School::all();
-    return view('/class',['schools'=>$data]);
-});

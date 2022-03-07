@@ -3,22 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\school;
-use App\Models\Classes;
+use App\Models\School;
+use App\Http\Requests\StoreSchoolRequest;
+
 
 class SchoolController extends Controller
 {
-    // public function storeSchool(){
-    //     $school = new School();
-    //     $school->schName = request('schoolname');
-    //     $school->address = request('address');
-    //     $school->save();
-
-    //     return redirect('/school');
-    // }
-
-    public function showSchools(){
-        $data= school::all();
-        return view('class',['schools'=>$data]);
+    //show School view
+    public function index(){
+        return view('school');
     }
+    
+    // store school in database
+     public function storeSchool(StoreSchoolRequest $request){
+         $validatedData = $request->validated();
+         School::create($request->all());
+         return back()->with('success', 'Your form has been submitted.');
+
+        //  if (($request->has('schName')) && ($request->has('address'))){
+        //     School::create($request->all());
+        //     return back()->with('success', 'Your form has been submitted.');
+        //  }
+        //  else
+        //     return back()->with('error', 'field can not be empty.');
+    }
+
+    
 }
