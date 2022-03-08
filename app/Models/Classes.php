@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\School;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Classes extends Model
 {
     use HasFactory;
-    protected $table = 'classes';
     protected $fillable =[
         'schoolid',
         'className',
@@ -21,8 +21,8 @@ class Classes extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function schools() 
+    public function School() 
     {
-        return $this->belongsTo(schools::class, 'schoolid', 'id');
+        return $this->belongsTo(School::class);
     }
 }

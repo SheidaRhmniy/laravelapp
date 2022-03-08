@@ -11,14 +11,14 @@
     <div>
         <h1>create a new class</h1>
         <form action="/class" method="POST">
-            @csrf
+            @csrf 
             <select name="schoolid">
                 <option>select school...</option>
                 @foreach($schools as $school)
-                <option value="{{$school['schoolid']}}"> {{$school['schName']}}</option>
+                <option value="{{ $school->id}}"> {{$school->schName}}</option>
                 @endforeach
             </select><br>
-            <lable for="classname">class name:</lable>
+            <lable for="className">class name:</lable>
             <input type="text" name="className"><br>
             <lable for="capacity">capacity:</lable>
             <input type="number" name="capacity"><br>

@@ -19,13 +19,7 @@ class SchoolController extends Controller
          $validatedData = $request->validated();
          School::create($request->all());
          return back()->with('success', 'Your form has been submitted.');
-
-        //  if (($request->has('schName')) && ($request->has('address'))){
-        //     School::create($request->all());
-        //     return back()->with('success', 'Your form has been submitted.');
-        //  }
-        //  else
-        //     return back()->with('error', 'field can not be empty.');
+         
     }
 
     

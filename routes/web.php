@@ -32,6 +32,6 @@ Route::get('/student',[StudentController::class,'index']);
 
 Route::post('/class',[ClassController::class,'storeClass']);
 Route::get('/class',[ClassController::class,'index']);
-
+ 
 
 
