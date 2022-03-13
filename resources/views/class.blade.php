@@ -17,11 +17,11 @@
                 @foreach($schools as $school)
                 <option value="{{ $school->id}}"> {{$school->schName}}</option>
                 @endforeach
-            </select><br>
+            </select><br><br>
             <lable for="className">class name:</lable>
-            <input type="text" name="className"><br>
+            <input type="text" name="className"><br><br>
             <lable for="capacity">capacity:</lable>
-            <input type="number" name="capacity"><br>
+            <input type="number" name="capacity"><br><br>
             <lable for="type">type:</lable>
             <input type="text" name="type"><br><br>
             <input type="submit" value="create">

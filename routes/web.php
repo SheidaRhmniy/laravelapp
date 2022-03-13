@@ -1,12 +1,14 @@
 <?php
 
+use App\Models\School;
+use App\Models\Classes;
+use App\Models\Student;
+use App\Models\ClassStudents;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\ClassController;
-use App\Models\School;
-use App\Models\Student;
-use App\Models\Classes;
+use App\Http\Controllers\ClassStudentsController;
 
 
 /*
@@ -32,6 +34,9 @@ Route::get('/student',[StudentController::class,'index']);
 
 Route::post('/class',[ClassController::class,'storeClass']);
 Route::get('/class',[ClassController::class,'index']);
+
+Route::post('/setgrade',[ClassStudentsController::class,'storeGrade']);
+Route::get('/setgrade',[ClassStudentsController::class,'index']);
  
 
 
